@@ -1,0 +1,405 @@
+/* 通用组件类 - 与 style.md 一一对应 */
+
+/* ========== 按钮 ========== */
+.woo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--w-button-round);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--w-button-trans-dur);
+  user-select: none;
+  white-space: nowrap;
+  outline: none;
+}
+.woo-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 尺寸 */
+.woo-button-l { padding: 1rem 1.5rem; font-size: 16px; }
+.woo-button-m { padding: 0.5625rem 1.875rem; font-size: 14px; }
+.woo-button-s { padding: 0.5rem 0.875rem; font-size: 12px; }
+
+/* 扁平主按钮 */
+.woo-button-flat.woo-button-primary {
+  background: var(--w-brand);
+  color: #fff;
+}
+.woo-button-flat.woo-button-primary:hover:not(:disabled) {
+  background: var(--w-brand-hover);
+}
+
+/* 扁平次要按钮 */
+.woo-button-flat.woo-button-default {
+  background: #eee;
+  color: #333;
+}
+.woo-button-flat.woo-button-default:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+/* 扁平危险按钮 */
+.woo-button-flat.woo-button-danger {
+  background: var(--w-special);
+  color: #fff;
+}
+.woo-button-flat.woo-button-danger:hover:not(:disabled) {
+  background: #c93518;
+}
+
+/* 线条主按钮 */
+.woo-button-line.woo-button-primary {
+  color: var(--w-brand);
+  border-color: var(--w-brand);
+  background: transparent;
+}
+.woo-button-line.woo-button-primary:hover:not(:disabled) {
+  background: var(--w-hover);
+}
+
+/* 线条默认按钮 */
+.woo-button-line.woo-button-default {
+  color: var(--w-main);
+  border-color: var(--w-border);
+  background: transparent;
+}
+.woo-button-line.woo-button-default:hover:not(:disabled) {
+  background: var(--w-hover);
+  color: var(--w-brand);
+  border-color: var(--w-brand);
+}
+
+/* 文字按钮 */
+.woo-button-simple {
+  font-weight: 400;
+  padding: 0;
+  background: transparent;
+  color: var(--w-main);
+}
+.woo-button-simple:hover:not(:disabled) {
+  opacity: 0.8;
+  color: var(--w-brand);
+}
+
+/* ========== 输入框 ========== */
+.woo-input-wrap {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--w-input-bg);
+  border: 1px solid var(--w-input-bg);
+  border-radius: 0.5em;
+  height: 2.375em;
+  padding: 0 0.75em;
+  transition: all var(--w-button-trans-dur);
+  width: 100%;
+}
+.woo-input-wrap:focus-within {
+  background-color: #fff;
+  border-color: var(--w-brand);
+}
+.woo-input-wrap input,
+.woo-input-wrap select,
+.woo-input-wrap textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--w-main);
+}
+.woo-input-wrap input::placeholder,
+.woo-input-wrap textarea::placeholder {
+  color: var(--w-sub);
+}
+.woo-input-error {
+  border-color: var(--w-special) !important;
+}
+
+.woo-input {
+  height: 38px;
+  padding: 0 12px;
+  background: var(--w-input-bg);
+  border: 1px solid var(--w-input-bg);
+  border-radius: var(--w-border-radius-l);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: all var(--w-button-trans-dur);
+}
+.woo-input:focus {
+  background: #fff;
+  border-color: var(--w-brand);
+}
+.woo-select {
+  height: 38px;
+  padding: 0 12px;
+  background: var(--w-input-bg);
+  border: 1px solid var(--w-input-bg);
+  border-radius: var(--w-border-radius-l);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+.woo-select:focus {
+  background: #fff;
+  border-color: var(--w-brand);
+}
+
+/* ========== 卡片 ========== */
+.woo-panel-main {
+  background-color: var(--w-card-bg);
+  border-radius: var(--w-border-radius-l);
+}
+.woo-panel-top { border-top: 1px solid var(--w-divider); }
+.woo-panel-bottom { border-bottom: 1px solid var(--w-divider); }
+
+.content-box {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.content-box-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========== 表格 ========== */
+.woo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.woo-table thead th {
+  background: #fafafa;
+  color: var(--w-main);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--w-divider);
+  white-space: nowrap;
+}
+.woo-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--w-divider);
+  color: var(--w-main);
+}
+.woo-table tbody tr:hover {
+  background: #fafafa;
+}
+.woo-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========== 标签 ========== */
+.woo-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 2px;
+  background: #f0f1f4;
+  color: var(--w-sub);
+  line-height: 1.4;
+}
+.woo-tag-primary {
+  background: var(--w-hover);
+  color: var(--w-brand);
+}
+.woo-tag-success {
+  background: rgba(82, 196, 26, 0.1);
+  color: var(--w-success);
+}
+.woo-tag-warning {
+  background: rgba(250, 173, 20, 0.1);
+  color: var(--w-warning);
+}
+.woo-tag-danger {
+  background: rgba(225, 65, 35, 0.1);
+  color: var(--w-special);
+}
+.woo-tag-info {
+  background: rgba(80, 125, 175, 0.1);
+  color: var(--w-info);
+}
+
+.content-category-tag {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 16px;
+  line-height: 14px;
+  color: var(--w-sub);
+  text-align: center;
+  min-width: 26px;
+  padding: 0 4px;
+  display: inline-block;
+}
+
+/* ========== 头像 ========== */
+.woo-avatar-main {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--w-brand), var(--w-brand-hover));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* ========== 弹出层 ========== */
+.woo-pop-main {
+  background-color: #fff;
+  border: 1px solid var(--w-border);
+  border-radius: var(--w-border-radius-l);
+  box-shadow: var(--shadow-pop);
+  min-width: 6.25rem;
+}
+
+.woo-modal-mask {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--w-index-mask);
+  animation: wooFadeIn var(--w-modal-dur) ease;
+}
+.woo-modal-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: var(--w-index-layer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.woo-modal-main {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  width: 480px;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  animation: wooZoomIn var(--w-modal-dur) ease;
+}
+.woo-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--w-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
+}
+.woo-modal-body {
+  padding: 20px;
+  overflow: auto;
+  flex: 1;
+}
+.woo-modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--w-divider);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.woo-modal-close {
+  cursor: pointer;
+  color: var(--w-sub);
+  background: transparent;
+  border: none;
+  padding: 4px;
+}
+.woo-modal-close:hover { color: var(--w-main); }
+
+@keyframes wooFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wooZoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ========== 分割线 ========== */
+.woo-divider-main { color: var(--w-divider); }
+.woo-divider-x { border-bottom: 1px solid; }
+.woo-divider-y { border-right: 1px solid; }
+.woo-divider-gap { margin: 0 0.75rem; }
+
+/* ========== 提示消息 ========== */
+.woo-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 99999999;
+  font-size: 14px;
+  animation: wooFadeIn 0.2s ease;
+}
+
+/* ========== 表单 ========== */
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.form-label {
+  font-size: 13px;
+  color: var(--w-main);
+  font-weight: 500;
+}
+.form-label .required {
+  color: var(--w-special);
+  margin-right: 2px;
+}
+
+/* ========== 状态点 ========== */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.status-dot-active { background: var(--w-success); }
+.status-dot-inactive { background: var(--w-disabled); }
+.status-dot-pending { background: var(--w-warning); }
+
+/* ========== 评分等级颜色 ========== */
+.grade-excellent { color: var(--grade-excellent); font-weight: 600; }
+.grade-good { color: var(--grade-good); font-weight: 600; }
+.grade-medium { color: var(--grade-medium); font-weight: 600; }
+.grade-pass { color: var(--grade-pass); font-weight: 600; }
+.grade-fail { color: var(--grade-fail); font-weight: 600; }
+
+.bg-grade-excellent { background: var(--grade-excellent); }
+.bg-grade-good { background: var(--grade-good); }
+.bg-grade-medium { background: var(--grade-medium); }
+.bg-grade-pass { background: var(--grade-pass); }
+.bg-grade-fail { background: var(--grade-fail); }
